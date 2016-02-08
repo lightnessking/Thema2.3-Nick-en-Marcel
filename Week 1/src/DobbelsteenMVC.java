@@ -8,7 +8,8 @@ public class DobbelsteenMVC extends JApplet
 	DobbelsteenView dobbelsteenView;  // view
 	DobbelsteenController controller;             // Controller
 	
-	public void init()
+	
+        public void init()
 	{
 		resize(250,200);
         
