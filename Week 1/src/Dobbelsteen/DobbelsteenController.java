@@ -1,19 +1,21 @@
+package Dobbelsteen;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class DobbelsteenController extends JPanel implements ActionListener
 {
-	DobbelsteenModel dob;
-	private JButton hoger = new JButton("hoger");
+    DobbelsteenModel dob;
+    private JButton hoger = new JButton("hoger");
     private JButton lager = new JButton("lager");
     private JButton gooi = new JButton("gooi");
 
 	public DobbelsteenController(DobbelsteenModel d)
 	{
-		dob=d;
-		this.add(hoger);
-		hoger.addActionListener(this);
+        dob=d;
+        this.add(hoger);
+        hoger.addActionListener(this);
         this.add(lager);
         lager.addActionListener(this);
         this.add(gooi);

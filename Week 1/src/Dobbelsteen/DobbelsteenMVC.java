@@ -1,3 +1,5 @@
+package Dobbelsteen;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +9,7 @@ public class DobbelsteenMVC extends JApplet
 	TekstView tekstView;              // view
 	DobbelsteenView dobbelsteenView;  // view
 	DobbelsteenController controller;             // Controller
-	
+
 	public void init()
 	{
 		resize(250,200);
