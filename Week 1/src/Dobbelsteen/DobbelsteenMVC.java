@@ -7,6 +7,7 @@ public class DobbelsteenMVC extends JApplet
 {
 	DobbelsteenModel model;             //het model
 	TekstView tekstView;              // view
+        GridLayOutView gridView;           // view
 	DobbelsteenView dobbelsteenView;  // view
 	DobbelsteenController controller;             // Controller
 
@@ -29,9 +30,13 @@ public class DobbelsteenMVC extends JApplet
         tekstView = new TekstView();
         tekstView.setBackground(Color.green);
         getContentPane().add(tekstView,BorderLayout.SOUTH);
+        gridView = new GridLayOutView();
+        gridView.setBackground(Color.MAGENTA);
+        getContentPane().add(gridView,BorderLayout.EAST);
         
         // Registreer de views bij het model
         model.addActionListener(tekstView);
+        model.addActionListener(gridView);
         model.addActionListener(dobbelsteenView);
         
         // Eerste worp
