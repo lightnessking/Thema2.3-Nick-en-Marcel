@@ -1,5 +1,6 @@
 package Dobbelsteen;
 
+<<<<<<< HEAD
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -39,3 +40,8 @@ public class GridLayOutView extends JPanel implements ActionListener
 	} 
         
 }
+=======
+public class GridLayOutView {
+    
+}
+>>>>>>> origin/master
