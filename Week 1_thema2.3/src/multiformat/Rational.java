@@ -40,7 +40,8 @@ public class Rational {
 			denominator = den;
 			simplify();
 		}else{
-			System.out.println("Can't divide by zero, please use a different Rational.");
+			System.out.println("Can't divide by zero, please use a different Rational. I've set the denominator as 1.0");
+			denominator = 1.0;
 		}
 	}
 
@@ -155,6 +156,11 @@ public class Rational {
 	}
 	
 	public void setDenominator(double den) {
-		denominator = den;
+		if(den != 0.0){
+			denominator = den;
+		}else{
+			System.out.println("Can't divide by zero, please use a different Rational. I've set the denominator as 1.0");
+			denominator = 1.0;
+		}
 	}
 }

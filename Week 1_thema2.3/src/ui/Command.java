@@ -55,6 +55,7 @@ public class Command {
       else if(command.equals("dec")) calc.setBase(new DecimalBase());
       else if(command.equals("bin")) calc.setBase(new BinaryBase());
       else if(command.equals("hex")) calc.setBase(new HexBase());
+      else if(command.equals("oct")) calc.setBase(new OctalBase());
       else if(command.equals("rat")) calc.setFormat(new RationalFormat());
       else if(command.equals("fixed")) calc.setFormat(new FixedPointFormat());
       else if(command.equals("float")) calc.setFormat(new FloatingPointFormat());
@@ -100,6 +101,7 @@ public class Command {
     System.out.println("  dec          (switch to base 10)");
     System.out.println("  bin          (switch to binary base)");
     System.out.println("  hex          (switch to hexadecimal base)");
+    System.out.println("  oct          (switch to octal base)");
     System.out.println("  fixed        (switch to fixed point format)");
     System.out.println("  float        (switch to floating point format)");
     System.out.println("  rat          (switch to rational format)");

@@ -1,0 +1,65 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import multiformat.Calculator;
+import multiformat.FormatException;
+import multiformat.OctalBase;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import junit.framework.TestCase;
+
+/**
+ * JUnit Testcase to test Rational. 
+ * Note that this class uses 'annotations' (the @...). This is a Java 1.5 feature. 
+ * @author gebruiker
+ *
+ */
+public class TestOctalBase extends TestCase {
+	OctalBase o;
+	
+	public TestOctalBase(String args){
+		super(args);
+		setUp();
+		testOctalToDecimal();
+	}
+	
+	@Before
+	public void setUp(){
+		o = new OctalBase();
+	}
+	
+	@Test
+	public void testOctalToDecimal(){
+		
+		Calculator calc = new Calculator();
+		
+		try{
+		calc.addOperand("12.0");
+		calc.setBase(new OctalBase());
+		assertEquals("0.0",calc.firstOperand());
+		assertEquals("14",calc.secondOperand());
+
+		calc.addOperand("2.8");
+		assertEquals("3.2",calc.firstOperand());
+		assertEquals("2.8",calc.secondOperand());
+		
+		calc.add();
+		assertEquals("0.0",calc.firstOperand());
+		assertEquals("6.0",calc.secondOperand());
+		}catch(FormatException e){
+			fail("Unexpected format exception");
+		}
+	}
+	
+	
+}
+		assertEquals(10.0, r.getNumerator(), 0);
+		assertEquals(0.5, r.getDenominator(), 0);	
+	}
+	
+	
+
+}
