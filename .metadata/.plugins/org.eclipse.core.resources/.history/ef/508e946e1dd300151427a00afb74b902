@@ -57,13 +57,14 @@ public class TestRational {
 	@Test
 	public void testCanonicalAndSimplify() {
 		r.setNumerator(12.5);
-		r.setDenominator(0.0);
+		r.setDenominator(1.0);
 		r.canonical();
 		r.simplify();
 		
 		assertEquals(25.0, r.getNumerator(), 0);
 		assertEquals(2.0, r.getDenominator(), 0);		
 	}
+
 
 
 }
