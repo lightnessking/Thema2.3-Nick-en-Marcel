@@ -29,12 +29,6 @@ public class GraphicalUserInterface extends JFrame {
 		new GraphicalUserInterface();
 	}
 	
-	/*
-	 * Constructor for graphical user interface.
-	 * Creates a frame with multiple panels and a lot of buttons.
-	 * Creates a calculator.
-	 */
-	
 	public GraphicalUserInterface(){
 		/*
 		 * Create frame

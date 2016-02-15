@@ -179,15 +179,6 @@ public class Calculator {
 		operands.clear();
 		operators.clear();
 	}
-	
-	/*
-	 * Method: parseStacks()
-	 * @Return Rational 
-	 * 
-	 * This method parses both stacks until one Rational is left.
-	 * It returns this rational as it's the final answer.
-	 * 
-	 */
 	public Rational parseStacks() {
 
 		while (this.operands.size() > 1 && this.operators.size() > 0) {
@@ -209,24 +200,14 @@ public class Calculator {
 		return this.operands.pop();
 	}
 
-	// Adds operand to stack.
-	// @param Rational
 	public void addOperandToStack(Rational item) {
 		this.operands.push(item);
 	}
 
-	// Adds operator to stack.
-	// @param String
 	public void addOperatorToStack(String item) {
 		this.operators.push(item);
 	}
 
-	/*
-	 * method createOperand
-	 * @Param String
-	 * @Return Rational
-	 * This method creates a new rational based on the current base of the calculator.
-	 */
 	public Rational createOperand(String newOperand) throws FormatException {
 		String pattern = getPattern(base);
 		if (base.getName() == "hex") {
@@ -244,41 +225,31 @@ public class Calculator {
 			throw new FormatException("Does not match requirements.");
 		}
 	}
-	// get stack for testing purposes.
+	// get stacks for testing purposes.
 	public Stack<Rational> getOperandStack(){
 		return this.operands;
 	}
-	// get stack for testing purposes.
+	
 	public Stack<String> getOperatorStack(){
 		return this.operators;
 	}
 	
-	/*
-	 * method: OperandToString
-	 * @Param: Rational, Base
-	 * @Return: String
-	 * Turns an operand into a string.
-	 */
 	public String OperandToString(Rational number, Base base) {
 		return format.toString(number, base);
 	}
 	
-	// sets variable to a number, this allows a person to save one variable to the calculator.
 	public void setVariable(String number){
 		this.variable = number;
 	}
 	
-	// inserts the saved variable into the textarea of the GUI.
 	public String getVariable(){
 		return variable;
 	}
 	
-	// increases amount of calculations by 1.
 	public void incrementCalculations(){
 		calculations++;
 	}
 	
-	// returns the amount of calculations
 	public int getCalculations(){
 		return calculations;
 	}
