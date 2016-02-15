@@ -20,7 +20,10 @@ package test;
 import junit.framework.TestCase;
 import multiformat.*;
 
-
+/**
+ * makes new calculator to test the program, these tests are hardcoded for quick results 
+ *
+ */
 public class TestCalculator extends TestCase {
 
 	public TestCalculator(String arg0) {
