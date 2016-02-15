@@ -1,0 +1,117 @@
+package ui;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import multiformat.*;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.io.*;
+
+public class GraphicalUserInterface extends JFrame {
+	public static void main(String[] args){
+		new GraphicalUserInterface();
+	}
+	
+	public GraphicalUserInterface(){
+		/*
+		 * Create frame
+		 * Create panels
+		 * Create all buttons
+		 * Add buttons to panels
+		 * Add panels to mainpanel
+		 * Add mainpanel to frame
+		 * Create calculator
+		 * 
+		 */
+	JFrame userInterface = new JFrame();
+	JPanel panelMain = new JPanel();
+	JPanel panelOne = new JPanel();
+	JPanel panelTwo = new JPanel();
+	JPanel panelThree = new JPanel();
+	Calculator calc = new Calculator();
+	// Buttons 0-F
+	JButton button_0 = new JButton("0"); JButton button_1 = new JButton("1"); JButton button_2 = new JButton("2"); JButton button_3 = new JButton("3"); 
+	JButton button_4 = new JButton("4"); JButton button_5 = new JButton("5"); JButton button_6 = new JButton("6"); JButton button_7 = new JButton("7"); 
+	JButton button_8 = new JButton("8"); JButton button_9 = new JButton("9"); JButton button_A = new JButton("A"); JButton button_B = new JButton("B");
+	JButton button_C = new JButton("C"); JButton button_D = new JButton("D"); JButton button_E = new JButton("E"); JButton button_F = new JButton("F");
+	// Buttons Operators
+	JButton button_div = new JButton("/"); JButton button_mul =    new JButton("*"); JButton button_sub = new JButton("-");
+	JButton button_add = new JButton("+"); JButton button_result = new JButton("=");
+	// Buttons RAT, FIXED, FLOAT, DOT(.) and NEGATE(-/+)
+	JButton button_rat = new JButton("RAT"); JButton button_fixed = new JButton("FIXED"); JButton button_float = new JButton("FLOAT");
+	JButton button_dot = new JButton(".");   JButton button_neg =   new JButton("-/+");
+	// Buttons BIN, OCT, DEC, HEX, CLEAR, SAVE, INSERT
+	JButton button_bin = new JButton("BIN"); JButton button_oct = new JButton("OCT")  ; JButton button_dec = new JButton("DEC"); 
+	JButton button_hex = new JButton("HEX"); JButton button_clr = new JButton("CLEAR"); JButton button_save = new JButton("SAVE");
+	JButton button_ins = new JButton("INSERT");
+	userInterface.setResizable(false);
+	
+	panelMain.setLayout(new BorderLayout());	
+	panelOne.setLayout(new GridLayout(1,1));
+	panelOne.add(new JTextArea("0.0", 1, 1));
+	panelOne.getComponent(0).setFont(new Font("Verdana", Font.BOLD, 25));
+	JTextField temp = new JTextField();
+	temp.setMinimumSize(new Dimension(40,50));;
+	panelTwo.setLayout(new GridLayout(1,7));	
+	
+	panelTwo.add(new JButton("BIN"));
+	panelTwo.add(new JButton("OCT"));
+	panelTwo.add(new JButton("DEC"));
+	panelTwo.add(new JButton("HEX"));
+	panelTwo.add(new JButton("CLEAR"));
+	panelTwo.add(new JButton("SAVE"));
+	panelTwo.add(new JButton("INSERT"));
+	
+	
+
+	panelThree.setLayout(new GridLayout(4,7));
+	panelThree.setBorder(BorderFactory.createEmptyBorder(25,0,0,0));
+	panelThree.add(new JButton("1"));		// button NR: 0
+	panelThree.add(new JButton("2"));		// button NR: 1
+	panelThree.add(new JButton("3"));		// button NR: 2
+	panelThree.add(new JButton("A"));		// button NR: 3
+	panelThree.add(new JButton("B"));		// button NR: 4
+	panelThree.add(new JButton("/")); 		// button NR: 5
+	panelThree.add(new JButton("RAT")); 	// button NR: 6
+	
+	panelThree.add(new JButton("4"));		// button NR: 7
+	panelThree.add(new JButton("5"));		// button NR: 8
+	panelThree.add(new JButton("6"));		// button NR: 9
+	panelThree.add(new JButton("C"));		// button NR: 10
+	panelThree.add(new JButton("D"));		// button NR: 11
+	panelThree.add(new JButton("*"));		// button NR: 12
+	panelThree.add(new JButton("FIXED"));	// button NR: 13
+	
+	panelThree.add(new JButton("7"));		// button NR: 14
+	panelThree.add(new JButton("8"));		// button NR: 15
+	panelThree.add(new JButton("9"));		// button NR: 16
+	panelThree.add(new JButton("E"));		// button NR: 17
+	panelThree.add(new JButton("F"));		// button NR: 18
+	panelThree.add(new JButton("-"));		// button NR: 19
+	panelThree.add(new JButton("FLOAT"));	// button NR: 20
+	
+	panelThree.add(new JButton("-/+"));		// button NR: 21
+	panelThree.add(new JButton("0"));		// button NR: 22
+	panelThree.add(new JButton("."));		// button NR: 23
+	panelThree.add(new JButton("("));		// button NR: 24
+	panelThree.add(new JButton(")"));		// button NR: 25
+	panelThree.add(new JButton("+"));		// button NR: 26
+	panelThree.add(new JButton("="));		// button NR: 27
+	
+	//panelThree.getComponent(5).setEnabled(false);
+	
+	panelMain.add(panelOne, BorderLayout.NORTH);
+	panelMain.add(panelTwo, BorderLayout.CENTER);
+	panelMain.add(panelThree, BorderLayout.SOUTH);
+	
+	userInterface.add(panelMain);
+	userInterface.pack();
+	userInterface.setVisible(true);
+	}
+}

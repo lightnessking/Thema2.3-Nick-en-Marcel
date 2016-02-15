@@ -1,0 +1,37 @@
+package ui;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import multiformat.*;
+import java.io.*;
+
+public class GraphicalUserInterface extends JFrame {
+	public static void main(String[] args){
+		new GraphicalUserInterface();
+	}
+	
+	public GraphicalUserInterface(){
+	JFrame userInterface = new JFrame();
+	JPanel interfacePanel = new JPanel();
+	Calculator calc = new Calculator();
+	
+	userInterface.setSize(500, 500);
+	userInterface.setResizable(true);
+	
+	calc.getBase();
+		for(int i = 0; i < 16; i++){
+			JButton button = new JButton(Integer.toHexString(i));
+			if(calc.getBase().getName() == "bin" && i > 1){			button.setEnabled(false); }
+			else if(calc.getBase().getName() == "oct" && i > 7){	button.setEnabled(false); }
+			else if(calc.getBase().getName() == "dec" && i > 9){	button.setEnabled(false); }
+			else if(calc.getBase().getName() == "hex" && i > 15){	button.setEnabled(false); }
+			else{ button.setEnabled(true);
+			}
+			interfacePanel.add(button);
+		}
+	
+	userInterface.add(interfacePanel);
+	userInterface.setVisible(true);
+	}
+}

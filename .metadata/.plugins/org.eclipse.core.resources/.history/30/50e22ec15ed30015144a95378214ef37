@@ -1,0 +1,157 @@
+package ui;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import multiformat.*;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+
+public class GraphicalUserInterface extends JFrame {
+	public static void main(String[] args){
+		new GraphicalUserInterface();
+	}
+	JTextArea textArea = new JTextArea();
+	public GraphicalUserInterface(){
+		/*
+		 * Create frame
+		 * Create panels
+		 * Create all buttons
+		 * Add buttons to panels
+		 * Add panels to mainpanel
+		 * Add mainpanel to frame
+		 * Create calculator
+		 * 
+		 */
+	JFrame userInterface = new JFrame();
+	JPanel panelMain = new JPanel();
+	JPanel panelOne = new JPanel();
+	JPanel panelTwo = new JPanel();
+	JPanel panelThree = new JPanel();
+	Calculator calc = new Calculator();
+	// Buttons 0-F
+	JButton button_0 = new JButton("0"); 
+	
+	JButton button_1 = new JButton("1"); JButton button_2 = new JButton("2"); JButton button_3 = new JButton("3"); 
+	JButton button_4 = new JButton("4"); JButton button_5 = new JButton("5"); JButton button_6 = new JButton("6"); JButton button_7 = new JButton("7"); 
+	JButton button_8 = new JButton("8"); JButton button_9 = new JButton("9"); JButton button_A = new JButton("A"); JButton button_B = new JButton("B");
+	JButton button_C = new JButton("C"); JButton button_D = new JButton("D"); JButton button_E = new JButton("E"); JButton button_F = new JButton("F");
+	// Buttons Operators
+	JButton button_div = new JButton("/"); JButton button_mul =    new JButton("*"); JButton button_sub = new JButton("-");
+	JButton button_add = new JButton("+"); JButton button_result = new JButton("=");
+	// Buttons RAT, FIXED, FLOAT, DOT(.), semiL, semiR and NEGATE(-/+)
+	JButton button_rat = new JButton("RAT"); JButton button_fixed = new JButton("FIXED"); JButton button_float = new JButton("FLOAT");
+	JButton button_semiL = new JButton("("); JButton button_semiR = new JButton(")");
+	JButton button_dot = new JButton(".");   JButton button_neg =   new JButton("-/+");
+	// Buttons BIN, OCT, DEC, HEX, CLEAR, SAVE, INSERT
+	JButton button_bin = new JButton("BIN"); JButton button_oct = new JButton("OCT")  ; JButton button_dec = new JButton("DEC"); 
+	JButton button_hex = new JButton("HEX"); JButton button_clr = new JButton("CLEAR"); JButton button_save = new JButton("SAVE");
+	JButton button_ins = new JButton("INSERT");
+	userInterface.setResizable(false);
+	
+	/*
+	 * Huge list of action listeners, one for every button...
+	 */
+	
+	button_1.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e){
+			appendText("1");
+		}
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * Set layouts for panels;
+	 * 
+	 */
+	panelMain.setLayout(new BorderLayout());	
+	panelOne.setLayout(new GridLayout(1,1));
+	panelTwo.setLayout(new GridLayout(1,7));
+	panelThree.setLayout(new GridLayout(4,7));
+	panelThree.setBorder(BorderFactory.createEmptyBorder(25,0,0,0));
+	
+	/* 
+	 * Add components to the panels.
+	 */
+	
+	panelOne.add(new JTextArea("0.0", 1, 1));
+	panelOne.getComponent(0).setFont(new Font("Verdana", Font.BOLD, 25));
+	textArea.setMinimumSize(new Dimension(40,50));;
+		
+	
+	panelTwo.add(button_bin);
+	panelTwo.add(button_oct);
+	panelTwo.add(button_dec);
+	panelTwo.add(button_hex);
+	panelTwo.add(button_clr);
+	panelTwo.add(button_save);
+	panelTwo.add(button_ins);
+	
+	
+
+	
+	panelThree.add(button_1);
+	panelThree.add(button_2);
+	panelThree.add(button_3);
+	panelThree.add(button_A);
+	panelThree.add(button_B);
+	panelThree.add(button_div);
+	panelThree.add(button_rat);
+	panelThree.add(button_4);
+	panelThree.add(button_5);
+	panelThree.add(button_6);
+	panelThree.add(button_C);
+	panelThree.add(button_D);
+	panelThree.add(button_mul);
+	panelThree.add(button_fixed);
+	panelThree.add(button_7);
+	panelThree.add(button_8);
+	panelThree.add(button_9);
+	panelThree.add(button_E);
+	panelThree.add(button_F);
+	panelThree.add(button_sub);
+	panelThree.add(button_float);
+	panelThree.add(button_neg);
+	panelThree.add(button_0);
+	panelThree.add(button_dot);
+	panelThree.add(button_semiL);
+	panelThree.add(button_semiR);
+	panelThree.add(button_add);
+	panelThree.add(button_result);
+	
+	
+	panelMain.add(panelOne, BorderLayout.NORTH);
+	panelMain.add(panelTwo, BorderLayout.CENTER);
+	panelMain.add(panelThree, BorderLayout.SOUTH);
+	
+	userInterface.add(panelMain);
+	userInterface.pack();
+	userInterface.setVisible(true);
+	}
+	public JTextArea getTextArea(){
+		return this.textArea;
+	}
+	
+	public void appendText(String text){
+		System.out.println("Logger: Method appendText has been called.");
+
+		getTextArea.append(text);
+		System.out.println("Logger: textfield has been updated.");
+	}
+	
+}

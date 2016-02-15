@@ -43,8 +43,8 @@ public class TestCalculator extends TestCase {
 		calc.add();
 		assertEquals("0.0",calc.firstOperand());
 		assertEquals("6.0",calc.secondOperand());
-		}catch(FormatException e){
-			fail("Unexpected format exception");
+		}catch(Exception e){
+			fail(e + "");
 		}
 	}
 	

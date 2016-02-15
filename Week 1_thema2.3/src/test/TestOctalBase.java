@@ -52,8 +52,8 @@ public class TestOctalBase extends TestCase {
 		calc.add();
 		assertEquals("0.0",calc.firstOperand());
 		assertEquals("36.0",calc.secondOperand());
-		}catch(FormatException e){
-			fail("Unexpected format exception");
+		}catch(Exception e){
+			fail(e + "");
 		}
 	}
 }

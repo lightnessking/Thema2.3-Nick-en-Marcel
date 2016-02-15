@@ -20,6 +20,7 @@ package ui;
 import multiformat.*;
 import java.io.*;
 
+
 /**
  * De main-klasse die leest en schrijft naar de console.
  * 
@@ -63,7 +64,7 @@ public class Command {
       else if(command.indexOf("op") >= 0) {
         try{
         	calc.addOperand(command.substring(2).trim());
-        }catch(FormatException e){
+        }catch(Exception e){
           System.out.println("Wrong operand: " + e.getMessage());
         }
       }else if(command.indexOf("read")>=0){

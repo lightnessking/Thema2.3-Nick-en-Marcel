@@ -1,0 +1,89 @@
+package ui;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import multiformat.*;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.io.*;
+
+public class GraphicalUserInterface extends JFrame {
+	public static void main(String[] args){
+		new GraphicalUserInterface();
+	}
+	
+	public GraphicalUserInterface(){
+	JFrame userInterface = new JFrame();
+	JPanel panelMain = new JPanel();
+	JPanel panelOne = new JPanel();
+	JPanel panelTwo = new JPanel();
+	JPanel panelThree = new JPanel();
+	Calculator calc = new Calculator();
+	
+	userInterface.setSize(500, 500);
+	userInterface.setResizable(false);
+	
+	panelMain.setLayout(new BorderLayout());
+	
+	
+	panelOne.setLayout(new GridLayout(1,1));
+	panelOne.add(new JTextField("0.0"));
+	
+	panelTwo.setLayout(new GridLayout(1,5));	
+	
+	panelTwo.add(new JButton("BIN"));
+	panelTwo.add(new JButton("OCT"));
+	panelTwo.add(new JButton("DEC"));
+	panelTwo.add(new JButton("HEX"));
+	panelTwo.add(new JButton("VAR"));
+	panelTwo.add(new JButton("VAR"));
+	panelTwo.add(new JButton("CLEAR"));
+	
+
+	panelThree.setLayout(new GridLayout(4,7));
+	
+	panelThree.add(new JButton("1"));		// button NR: 0
+	panelThree.add(new JButton("2"));		// button NR: 1
+	panelThree.add(new JButton("3"));		// button NR: 2
+	panelThree.add(new JButton("A"));		// button NR: 3
+	panelThree.add(new JButton("B"));		// button NR: 4
+	panelThree.add(new JButton("/")); 		// button NR: 5
+	panelThree.add(new JButton("RAT")); 	// button NR: 6
+	
+	panelThree.add(new JButton("4"));		// button NR: 7
+	panelThree.add(new JButton("5"));		// button NR: 8
+	panelThree.add(new JButton("6"));		// button NR: 9
+	panelThree.add(new JButton("C"));		// button NR: 10
+	panelThree.add(new JButton("D"));		// button NR: 11
+	panelThree.add(new JButton("*"));		// button NR: 12
+	panelThree.add(new JButton("FIXED"));	// button NR: 13
+	
+	panelThree.add(new JButton("7"));		// button NR: 14
+	panelThree.add(new JButton("8"));		// button NR: 15
+	panelThree.add(new JButton("9"));		// button NR: 16
+	panelThree.add(new JButton("E"));		// button NR: 17
+	panelThree.add(new JButton("F"));		// button NR: 18
+	panelThree.add(new JButton("-"));		// button NR: 19
+	panelThree.add(new JButton("FLOAT"));	// button NR: 20
+	
+	panelThree.add(new JButton("-/+"));		// button NR: 21
+	panelThree.add(new JButton("0"));		// button NR: 22
+	panelThree.add(new JButton("."));		// button NR: 23
+	panelThree.add(new JButton("("));		// button NR: 24
+	panelThree.add(new JButton(")"));		// button NR: 25
+	panelThree.add(new JButton("+"));		// button NR: 26
+	panelThree.add(new JButton("="));		// button NR: 27
+	
+	//panelThree.getComponent(5).setEnabled(false);
+	
+	panelMain.add(panelOne, BorderLayout.NORTH);
+	panelMain.add(panelTwo, BorderLayout.CENTER);
+	panelMain.add(panelThree, BorderLayout.SOUTH);
+	
+	userInterface.add(panelMain);
+	userInterface.pack();
+	userInterface.setVisible(true);
+	}
+}

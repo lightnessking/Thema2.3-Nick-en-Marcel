@@ -1,0 +1,96 @@
+package ui;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import multiformat.*;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.io.*;
+
+public class GraphicalUserInterface extends JFrame {
+	public static void main(String[] args){
+		new GraphicalUserInterface();
+	}
+	
+	public GraphicalUserInterface(){
+	JFrame userInterface = new JFrame();
+	JPanel panelMain = new JPanel();
+	JPanel panelOne = new JPanel();
+	JPanel panelTwo = new JPanel();
+	JPanel panelThree = new JPanel();
+	Calculator calc = new Calculator();
+	
+	userInterface.setSize(500, 500);
+	userInterface.setResizable(false);
+	
+	panelMain.setLayout(new BorderLayout());
+	panelMain.add(panelOne, BorderLayout.NORTH);
+	panelMain.add(panelTwo, BorderLayout.CENTER);
+	panelMain.add(panelThree, BorderLayout.SOUTH);
+	
+	
+	panelOne.setLayout(new GridLayout(1,1));
+	panelOne.add(new JTextField("0.0"));
+	panelOne.setSize(475,25);
+	
+	panelTwo.setLayout(new GridLayout(1,5));	
+	panelTwo.setSize(475,50);
+	
+	panelTwo.add(new JButton("BIN"));
+	panelTwo.add(new JButton("OCT"));
+	panelTwo.add(new JButton("DEC"));
+	panelTwo.add(new JButton("HEX"));
+	panelTwo.add(new JButton("CLEAR"));
+	
+
+	panelThree.setLayout(new GridLayout(4,7));
+	
+	panelThree.add(new JButton("1"));
+	panelThree.add(new JButton("2"));
+	panelThree.add(new JButton("3"));
+	panelThree.add(new JButton("A"));
+	panelThree.add(new JButton("B"));
+	panelThree.add(new JButton("/")); 
+	panelThree.add(new JButton("RAT")); 
+	
+	panelThree.add(new JButton("4"));
+	panelThree.add(new JButton("5"));
+	panelThree.add(new JButton("6"));
+	panelThree.add(new JButton("C"));
+	panelThree.add(new JButton("D"));
+	panelThree.add(new JButton("*"));
+	panelThree.add(new JButton("FIXED"));
+	
+	panelThree.add(new JButton("7"));
+	panelThree.add(new JButton("8"));
+	panelThree.add(new JButton("9"));
+	panelThree.add(new JButton("E"));
+	panelThree.add(new JButton("F"));
+	panelThree.add(new JButton("-"));
+	panelThree.add(new JButton("FLOAT"));
+	
+	panelThree.add(new JButton("-/+"));
+	panelThree.add(new JButton("0"));
+	panelThree.add(new JButton("."));
+	panelThree.add(new JButton("("));
+	panelThree.add(new JButton(")"));
+	panelThree.add(new JButton("+"));
+	panelThree.add(new JButton("="));
+	
+	
+/*
+			button = new JButton(Integer.toHexString(i));
+			if(calc.getBase().getName() == "bin" && i > 1){			button.setEnabled(false); }
+			else if(calc.getBase().getName() == "oct" && i > 7){	button.setEnabled(false); }
+			else if(calc.getBase().getName() == "dec" && i > 9){	button.setEnabled(false); }
+			else if(calc.getBase().getName() == "hex" && i > 15){	button.setEnabled(false); }
+			else{ button.setEnabled(true);
+			}
+*/
+	userInterface.add(panelMain);
+
+	userInterface.setVisible(true);
+	}
+}
