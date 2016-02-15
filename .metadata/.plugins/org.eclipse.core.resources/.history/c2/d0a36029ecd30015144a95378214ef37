@@ -44,7 +44,7 @@ public class GraphicalUserInterface extends JFrame {
 	JFrame calculations = new JFrame();
 	JPanel calculationsPanel = new JPanel();
 	JLabel calculationsLabel = new JLabel();
-	calculationsLabel.setText("Nog geen berekeningen gedaan.");
+	calculationsLabel.setText("Aantal berekeningen: " + calc.getCalculations());
 	
 	
 	calculationsPanel.add(calculationsLabel);
@@ -372,7 +372,7 @@ public class GraphicalUserInterface extends JFrame {
 			resultIsPressed = true;
 			operatorStatus = false;
 			calc.incrementCalculations();
-			calculationsLabel.setText("Aantal berekeningen: " + calc.getCalculations());
+			calculationsLabel.repaint();
 		}
 	});
 	

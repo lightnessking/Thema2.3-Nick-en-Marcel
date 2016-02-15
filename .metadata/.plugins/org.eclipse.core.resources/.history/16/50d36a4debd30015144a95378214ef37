@@ -208,12 +208,4 @@ public class Calculator {
 		return variable;
 	}
 	
-	public void incrementCalculations(){
-		calculations++;
-	}
-	
-	public int getCalculations(){
-		return calculations;
-	}
-	
 }

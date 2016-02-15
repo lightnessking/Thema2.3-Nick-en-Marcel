@@ -40,11 +40,10 @@ public class GraphicalUserInterface extends JFrame {
 		 * Create calculator
 		 * 
 		 */
-	Calculator calc = new Calculator();
 	JFrame calculations = new JFrame();
 	JPanel calculationsPanel = new JPanel();
 	JLabel calculationsLabel = new JLabel();
-	calculationsLabel.setText("Nog geen berekeningen gedaan.");
+	
 	
 	
 	calculationsPanel.add(calculationsLabel);
@@ -62,7 +61,7 @@ public class GraphicalUserInterface extends JFrame {
 	JPanel panelTwo = new JPanel();
 	JPanel panelThree = new JPanel();
 	
-	
+	Calculator calc = new Calculator();
 	textArea.setFont(new Font("Verdana", Font.BOLD, 25));		
 	textArea.setEditable(false);
 	// Buttons 0-F
@@ -371,8 +370,6 @@ public class GraphicalUserInterface extends JFrame {
 			}
 			resultIsPressed = true;
 			operatorStatus = false;
-			calc.incrementCalculations();
-			calculationsLabel.setText("Aantal berekeningen: " + calc.getCalculations());
 		}
 	});
 	

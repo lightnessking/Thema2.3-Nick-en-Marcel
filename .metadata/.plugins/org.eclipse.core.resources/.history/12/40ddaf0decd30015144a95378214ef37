@@ -209,7 +209,7 @@ public class Calculator {
 	}
 	
 	public void incrementCalculations(){
-		calculations++;
+		calculations ++;
 	}
 	
 	public int getCalculations(){

@@ -29,7 +29,6 @@ public class Calculator {
 	private Rational operand_0 = new Rational();
 	private Rational operand_1 = new Rational();
 	private String variable;
-	private int calculations = 0;
 	private Stack<String> operators = new Stack<String>();
 	private Stack<Rational> operands = new Stack<Rational>();
 	// The current format of the calculator
@@ -206,14 +205,6 @@ public class Calculator {
 	
 	public String getVariable(){
 		return variable;
-	}
-	
-	public void incrementCalculations(){
-		calculations++;
-	}
-	
-	public int getCalculations(){
-		return calculations;
 	}
 	
 }
